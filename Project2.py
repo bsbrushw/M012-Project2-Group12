@@ -64,9 +64,7 @@ def Simulation(trials:int, x:int) -> str:
     exploitlist = [exploitOnly() for i in range(trials)]
     explorelist = [exploreOnly() for i in range(trials)]
     greedylist = [eGreedy(x) for i in range(trials)]
-    print(exploitlist)
-    print(explorelist)
-    print(greedylist)
+  
     return("Exploit Best: {exploitbest} \nExploit Mean: {exploitmean} \nExploit Regret: {exploitregret} \nExplore Best: {explorebest} \nExplore Mean: {exploremean} \nExplore Regret: {exploreregret} \nGreedy Best: {greedybest} \nGreedy Mean: {greedymean} \nGreedy Regret: {greedyregret}"\
         .format(exploitbest = (42+(18*297)), exploitmean = statistics.mean(exploitlist), exploitregret = (42+(18*297)-statistics.mean(exploitlist)), \
             explorebest = (42*100), exploremean = statistics.mean(explorelist),exploreregret = (4200-statistics.mean(explorelist)), \
